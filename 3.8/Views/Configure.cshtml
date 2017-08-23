@@ -1,0 +1,82 @@
+﻿@{
+    Layout = "";
+}
+@model ConfigurationModel
+@using NopFarsi.Payments.Zarinpal.Models;
+@using Nop.Web.Framework;
+
+@Html.Action("StoreScopeConfiguration", "Setting", new { area = "Admin" })
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="col-md-3">
+                        
+                        @Html.NopLabelFor(model => model.IsTomanForStore)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.NopEditorFor(model => model.IsTomanForStore)
+                        @Html.ValidationMessageFor(model => model.IsTomanForStore)
+                    </div>
+                </div>
+                @*<div class="form-group">
+                    <div class="col-md-3">
+                        @Html.OverrideStoreCheckboxFor(model => model.ShippableProductRequiredOverrideForStore, model => model.ShippableProductRequired, Model.ActiveStoreScopeConfiguration)
+                        @Html.NopLabelFor(model => model.ShippableProductRequired)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.NopEditorFor(model => model.ShippableProductRequired)
+                        @Html.ValidationMessageFor(model => model.ShippableProductRequired)
+                    </div>
+                </div>*@
+                
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.OverrideStoreCheckboxFor(model => model.MerchantIdOverrideForStore, model => model.MerchantId, Model.ActiveStoreScopeConfiguration)
+                        @Html.NopLabelFor(model => model.MerchantId)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.NopEditorFor(model => model.MerchantId)
+                        @Html.ValidationMessageFor(model => model.MerchantId)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.OverrideStoreCheckboxFor(model => model.PayementUrlOverrideForStore, model => model.PayementUrl, Model.ActiveStoreScopeConfiguration)
+                        @Html.NopLabelFor(model => model.PayementUrl)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.NopEditorFor(model => model.PayementUrl)
+                        @Html.ValidationMessageFor(model => model.PayementUrl)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.OverrideStoreCheckboxFor(model => model.WebServiceUrlOverrideForStore, model => model.WebServiceUrl, Model.ActiveStoreScopeConfiguration)
+                        @Html.NopLabelFor(model => model.WebServiceUrl)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.NopEditorFor(model => model.WebServiceUrl)
+                        @Html.ValidationMessageFor(model => model.WebServiceUrl)
+                    </div>
+                </div>
+              
+                
+                <div class="form-group">
+                    <div class="col-md-3">
+                        &nbsp;
+                    </div>
+                    <div class="col-md-9">
+                        <input type="submit" name="save" class="btn bg-blue" value="@T("Admin.Common.Save")" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

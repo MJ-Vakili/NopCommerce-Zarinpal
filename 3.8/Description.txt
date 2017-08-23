@@ -1,0 +1,9 @@
+Group: Payment methods
+FriendlyName: زرین پال
+SystemName: NopFarsi.Payments.Zarinpal
+Version: 1.0
+SupportedVersions: 3.80
+Author: NopFarsi.ir
+DisplayOrder: 10
+FileName: NopFarsi.Payments.Zarinpal.dll
+Description: این پلاگین امکان پرداخت از طریق سامانه زرین پال را فراهم می کند.
